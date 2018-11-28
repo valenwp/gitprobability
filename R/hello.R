@@ -18,3 +18,5 @@ rejsample<-function(n, pdf, a, b, C){
   v<-runif(0,C)
   if(pdf(u)>=v){z<-pdf(u)}})
 }
+#add reject command
+
