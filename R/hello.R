@@ -16,7 +16,8 @@
 rejsample<-function(n, pdf, a, b, C){
   replicate(n, {u<-runif(a,b)
   v<-runif(0,C)
-  if(pdf(u)>=v){z<-pdf(u)}})
+  if(pdf(u)>=v){accep<-TRUE}
+  else{accept<-FALSE}})
 }
-#add reject command
+
 
