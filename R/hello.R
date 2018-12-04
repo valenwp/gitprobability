@@ -14,10 +14,13 @@
 #   Test Package:              'Ctrl + Shift + T'
 
 rejsample<-function(n, pdf, a, b, C){
-  replicate(n, {u<-runif(a,b)
-  v<-runif(0,C)
-  if(pdf(u)>=v){accep<-TRUE}
-  else{accept<-FALSE}})
-}
-
-
+  accepted<-0
+  samp<-rep(NA,n)
+  while(accepted<n){
+  u<-runif(1,a,b)
+  v<-runif(1,0,C)
+  if(pdf(u)>=v){
+    accepted<-accepted+1
+    samp[accepted]=u
+  }}
+  samp}
