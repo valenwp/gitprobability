@@ -19,7 +19,19 @@ vignette: >
 #C is a number greater than or equal to f(x) for all x
 
 #Example:
-```{r}
+```{r}
+rejsample<-function(n, pdf, a, b, C){
+  accepted<-0
+  samp<-rep(NA,n)
+  while(accepted<n){
+  u<-runif(1,a,b)
+  v<-runif(1,0,C)
+  if(pdf(u)>=v){
+    accepted<-accepted+1
+    samp[accepted]=u
+  }}
+  samp}
+
 pdf<-function(x){x/2}
 rejsample(2, pdf, 0, 3, .4)
 ```
