@@ -1,4 +1,4 @@
-#' Sample from a pdf
+#' Rejection sample from a pdf
 #'
 #' @param n a number
 #' @param pdf a random variable

@@ -1,10 +1,9 @@
 Package: gitprobability
 Type: Package
-Title: What the Package Does (Title Case)
+Title: gitprobability
 Version: 0.1.0
 Author: Valen Piotrowski
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: This package allows you to sample from a random variable given a pdf, number of samples, and upper and lower bounds.
+Description: This package allows you to sample from a random variable given a pdf, number of samples, and upper and lower bounds using rejection sampling or MCMC sampling.
 Encoding: UTF-8
 LazyData: true
 Suggests: 

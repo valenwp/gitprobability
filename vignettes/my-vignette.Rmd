@@ -9,9 +9,10 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-#The 'rejsample' command allows a user to sample from a given pdf.
+#The 'rejsample' command allows a user to rejection sample from a given pdf.
 
-#INPUT DESCRIPTIONS
+#INPUT DESCRIPTIONS:
+
 #n is the number of samples you want to pull from the pdf
 #pdf is the probability distribution function to sample from
 #a is the lower bound to sample from the pdf
@@ -31,10 +32,33 @@ rejsample<-function(n, pdf, a, b, C){
     samp[accepted]=u
   }}
   samp}
-
+#skip above if package is already installed
 pdf<-function(x){x/2}
-rejsample(2, pdf, 0, 3, .4)
+rejsample(5, pdf, 0, 3, .4)
 ```
 
+#The 'mcmcsample' command allows a user to MCMC sample from a given pdf.
 
+#INPUT DESCRIPTIONS:
+
+# t is a sample of numbers for the pdf to choose from
+# pdf is a random variable
+# n is the number samples desired 
+
+#Example:
+```{r}
+mcmcsample<-function(t, pdf, n){
+  dat<-t
+  for(i in 1:(n-1)){
+  proposed<-t
+  if(runif(1,0,1)<pdf(proposed)/pdf(t)){t<-proposed}
+  dat<-c(dat,t)
+  }
+  dat
+}
+#skip above if package is already installed
+pdf<-function(x){x/2}
+t<-runif(1, 0, 2)
+mcmcsample(t, pdf, 3)
+```
 
