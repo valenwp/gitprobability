@@ -1,0 +1,28 @@
+---
+title: "Rejsample"
+author: "Valen Piotrowski"
+date: "12/05/18"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+#The 'rejsample' command allows a user to sample from a given pdf.
+
+#INPUT DESCRIPTIONS
+#n is the number of samples you want to pull from the pdf
+#pdf is the probability distribution function to sample from
+#a is the lower bound to sample from the pdf
+#b is the upper bound to sample from the pdf
+#C is a number greater than or equal to f(x) for all x
+
+#Example:
+```{r}
+pdf<-function(x){x/2}
+rejsample(2, pdf, 0, 3, .4)
+```
+
+
+

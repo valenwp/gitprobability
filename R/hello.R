@@ -10,7 +10,6 @@
 #' pdf<-function(x){x/2}
 #' rejsample(2, pdf, 0, 5, .5)
 
-
 rejsample<-function(n, pdf, a, b, C){
   accepted<-0
   samp<-rep(NA,n)
