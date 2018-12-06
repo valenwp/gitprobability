@@ -1,5 +1,5 @@
 ---
-title: "Rejsample"
+title: "REJSAMPLE AND MCMCSAMPLE"
 author: "Valen Piotrowski"
 date: "12/05/18"
 output: rmarkdown::html_vignette
@@ -26,23 +26,13 @@ C is a number greater than or equal to f(x) for all x
 
 #Example:
 ```{r}
-rejsample<-function(n, pdf, a, b, C){
-  accepted<-0
-  samp<-rep(NA,n)
-  while(accepted<n){
-  u<-runif(1,a,b)
-  v<-runif(1,0,C)
-  if(pdf(u)>=v){
-    accepted<-accepted+1
-    samp[accepted]=u
-  }}
-  samp}
-#skip above if package is already installed
+#This example gets 5 samples between 0 and 3 from the pdf x/2.
+library(gitprobability)
 pdf<-function(x){x/2}
 rejsample(5, pdf, 0, 3, .4)
 ```
 
-#The 'mcmcsample' command allows a user to MCMC sample from a given pdf.
+#The 'mcmcsample' command allows a user to get an MCMC sample from a given pdf.
 
 INPUT DESCRIPTIONS:
 
@@ -52,16 +42,8 @@ pdf is a random variable
 
 #Example:
 ```{r}
-mcmcsample<-function(t, pdf){
-  dat<-t
-  for(i in 1:0){
-  proposed<-t
-  if(runif(1,0,1)<pdf(proposed)/pdf(t)){t<-proposed}
-  dat<-c(dat,t)
-  }
-  dat
-}
-#skip above if package is already installed
+#This example gets a sample from pdf x/2 between 0 and 2.
+library(gitprobability)
 pdf<-function(x){x/2}
 t<-runif(1, 0, 2)
 mcmcsample(t, pdf)
