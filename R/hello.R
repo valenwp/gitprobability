@@ -1,11 +1,13 @@
-#' Rejection sample from a pdf
+#' @description Rejection sample from a pdf
 #'
 #' @param n a number
 #' @param pdf a random variable
 #' @param a a number
 #' @param b a number
 #' @param C a number
+#'
 #' @return the samples
+#'
 #' @examples
 #' pdf<-function(x){x/2}
 #' rejsample(2, pdf, 0, 5, .5)
