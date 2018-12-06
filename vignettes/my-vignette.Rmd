@@ -11,13 +11,18 @@ vignette: >
 
 #The 'rejsample' command allows a user to rejection sample from a given pdf.
 
-#INPUT DESCRIPTIONS:
+INPUT DESCRIPTIONS:
 
-#n is the number of samples you want to pull from the pdf
-#pdf is the probability distribution function to sample from
-#a is the lower bound to sample from the pdf
-#b is the upper bound to sample from the pdf
-#C is a number greater than or equal to f(x) for all x
+n is the number of samples you want to pull from the pdf
+
+pdf is the probability distribution function to sample from
+
+a is the lower bound to sample from the pdf
+
+b is the upper bound to sample from the pdf
+
+C is a number greater than or equal to f(x) for all x
+
 
 #Example:
 ```{r}
@@ -39,10 +44,11 @@ rejsample(5, pdf, 0, 3, .4)
 
 #The 'mcmcsample' command allows a user to MCMC sample from a given pdf.
 
-#INPUT DESCRIPTIONS:
+INPUT DESCRIPTIONS:
 
-# t is a sample of numbers for the pdf to choose from
-# pdf is a random variable
+t is a sample of numbers for the pdf to choose from
+
+pdf is a random variable
 
 #Example:
 ```{r}
